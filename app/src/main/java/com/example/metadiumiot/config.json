@@ -1,0 +1,140 @@
+{
+  "name": "accio",
+  "version": "1.0",
+  "x-type": "hlfv2",
+  "description": "for edu",
+  "channels": {
+    "testbed": {
+      "orderers": [
+        "orderer0.blockchainbusan.kr"
+      ],
+      "peers": [
+        "peer0.edu-org1.blockchainbusan.kr",
+        "peer0.edu-org2.blockchainbusan.kr",
+        "peer0.edu-org3.blockchainbusan.kr"
+      ]
+    }
+  },
+  "organizations": {
+    "edu-org1.blockchainbusan.kr": {
+      "mspid": "edu-org1MSP",
+      "adminPrivateKey": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org1.blockchainbusan.kr/users/Admin@edu-org1.blockchainbusan.kr/msp/keystore/priv_sk"
+      },
+      "peers": [
+        "peer0.edu-org1.blockchainbusan.kr"
+      ],
+      "signedCert": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org1.blockchainbusan.kr/users/Admin@edu-org1.blockchainbusan.kr/msp/signcerts/Admin@edu-org1.blockchainbusan.kr-cert.pem"
+      }
+    },
+    "edu-org2.blockchainbusan.kr": {
+      "mspid": "edu-org2MSP",
+      "adminPrivateKey": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org2.blockchainbusan.kr/users/Admin@edu-org2.blockchainbusan.kr/msp/keystore/priv_sk"
+      },
+      "peers": [
+        "peer0.edu-org2.blockchainbusan.kr"
+      ],
+      "signedCert": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org2.blockchainbusan.kr/users/Admin@edu-org2.blockchainbusan.kr/msp/signcerts/Admin@edu-org2.blockchainbusan.kr-cert.pem"
+      }
+    },
+    "edu-org3.blockchainbusan.kr": {
+      "mspid": "edu-org3MSP",
+      "adminPrivateKey": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org3.blockchainbusan.kr/users/Admin@edu-org3.blockchainbusan.kr/msp/keystore/priv_sk"
+      },
+      "peers": [
+        "peer0.edu-org3.blockchainbusan.kr"
+      ],
+      "signedCert": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org3.blockchainbusan.kr/users/Admin@edu-org3.blockchainbusan.kr/msp/signcerts/Admin@edu-org3.blockchainbusan.kr-cert.pem"
+      }
+    }
+  },
+  "orderers": {
+    "orderer0.blockchainbusan.kr": {
+      "url": "grpcs://orderer0.blockchainbusan.kr:7050",
+      "grpcOptions": {
+        "ssl-target-name-override": "orderer0.blockchainbusan.kr"
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/ordererOrganizations/blockchainbusan.kr/orderers/orderer0.blockchainbusan.kr/tls/ca.crt"
+      }
+    }
+  },
+  "peers": {
+    "peer0.edu-org1.blockchainbusan.kr": {
+      "url": "grpcs://peer0.edu-org1.blockchainbusan.kr:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.edu-org1.blockchainbusan.kr"
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org1.blockchainbusan.kr/peers/peer0.edu-org1.blockchainbusan.kr/tls/ca.crt"
+      }
+    },
+    "peer0.edu-org2.blockchainbusan.kr": {
+      "url": "grpcs://peer0.edu-org2.blockchainbusan.kr:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.edu-org2.blockchainbusan.kr"
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org2.blockchainbusan.kr/peers/peer0.edu-org2.blockchainbusan.kr/tls/ca.crt"
+      }
+    },
+    "peer0.edu-org3.blockchainbusan.kr": {
+      "url": "grpcs://peer0.edu-org3.blockchainbusan.kr:7051",
+      "grpcOptions": {
+        "ssl-target-name-override": "peer0.edu-org3.blockchainbusan.kr"
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org3.blockchainbusan.kr/peers/peer0.edu-org3.blockchainbusan.kr/tls/ca.crt"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca.edu-org1.blockchainbusan.kr": {
+      "url": "https://ca.edu-org1.blockchainbusan.kr:7054",
+      "httpOptions": {
+        "verify": false
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org1.blockchainbusan.kr/ca/ca.edu-org1.blockchainbusan.kr-cert.pem"
+      },
+      "caName": "ca.edu-org1.blockchainbusan.kr",
+      "registrar": {
+        "enrollID": "admin",
+        "enrollSecret": "adminpw"
+      }
+    },
+    "ca.edu-org2.blockchainbusan.kr": {
+      "url": "https://ca.edu-org2.blockchainbusan.kr:7054",
+      "httpOptions": {
+        "verify": false
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org2.blockchainbusan.kr/ca/ca.edu-org2.blockchainbusan.kr-cert.pem"
+      },
+      "caName": "ca.edu-org2.blockchainbusan.kr",
+      "registrar": {
+        "enrollID": "admin",
+        "enrollSecret": "adminpw"
+      }
+    },
+    "ca.edu-org3.blockchainbusan.kr": {
+      "url": "https://ca.edu-org3.blockchainbusan.kr:7054",
+      "httpOptions": {
+        "verify": false
+      },
+      "tlsCACerts": {
+        "path": "/usr/app/crypto-config/peerOrganizations/edu-org3.blockchainbusan.kr/ca/ca.edu-org3.blockchainbusan.kr-cert.pem"
+      },
+      "caName": "ca.edu-org3.blockchainbusan.kr",
+      "registrar": {
+        "enrollID": "admin",
+        "enrollSecret": "adminpw"
+      }
+    }
+  }
+}
